@@ -1,17 +1,23 @@
+<h2> Your move: </h2>
 <div class="button">
-  <a href= <%= "#{@user_move = 'rock'}" %>>  
+  <a href= <%= "#{@throw.user_move = 'rock'}" %>>  
     Rock 
   </a>
 </div> 
 
 <div class="button">
-  <a href= <%= "#{@user_move = 'paper'}" %>>  
+  <a href= <%= "#{@throw.user_move = 'paper'}" %>>  
     Paper 
   </a>
 </div> 
 
 <div class="button">
-  <a href= <%= "#{@user_move = 'paper'}" %>>  
+  <a href= <%= "#{@throw.user_move = 'scissors'}" %>>  
     Scissors 
   </a>
 </div> 
+
+<h2> Comp move: </h2>
+<%= @throw.comp_move %>
+
+<h2> <%= @throw.winner %> </h2>
