@@ -1,27 +1,25 @@
 class Throw
   attr_accessor :comp_move, :options, :user_move, :winner
 
-  def initialize
+  def initialize(user_move)
     @comp_move = ["rock","paper","scissors"].sample
-    evaluate
+    @user_move = user_move
   end
 
   def evaluate
-    @winner
-    @options = {"rock"=>"scissors", "paper"=>"rock", "scissors"=>"paper"}
-    
-    @options.each do |move, beat_value|
-      case @comp_move
-        when move
-          if @user_move == beat_value
-            @winner = "Computer wins!"
-          elsif @user_move == @comp_move
-            @winner = "It's a tie!"
-          else
-            @winner = "You win!"
-          end
-      end
+    # @options = {"rock"=>"scissors", "paper"=>"rock", "scissors"=>"paper"}
+    if @user_move == "rock" && @comp_move == "scissors"
+      @winner = "You win!" 
+    elsif @user_move == "paper" && @comp_move == "rock"
+      @winner = "You win!" 
+    elsif @user_move == "scissors" && @comp_move == "paper"
+      @winner = "You win!"
+    elsif @user_move == @comp_move
+      @winner = "It's a tie!"
+    else
+      @winner = "Computer wins!"
     end
-  end
 
+  end
 end
+
